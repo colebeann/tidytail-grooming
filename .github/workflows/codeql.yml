@@ -9,6 +9,9 @@ permissions:
   actions: read
 jobs:
   analyze:
+    # Code scanning on a private repo needs GitHub Code Security (or a public repo).
+    # Once enabled in Settings > Code security, set repo variable CODE_SCANNING=true.
+    if: vars.CODE_SCANNING == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

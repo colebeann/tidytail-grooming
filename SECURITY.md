@@ -30,6 +30,7 @@ security@tidytail.example (placeholder). We aim to reply within 3 working days.
 - [ ] Keep the admin token in a password manager. Rotate it and `CSRF_SECRET` at least yearly.
 - [ ] `LEAD_ENCRYPTION_KEY` cannot be changed without re-encrypting data: back it up separately from the data.
 - [ ] Turn on GitHub branch protection for `main` (require PR + passing CI), secret scanning and push protection.
+- [ ] Enable code scanning (needs GitHub Code Security on a private repo), then add repo variable `CODE_SCANNING=true` so the CodeQL workflow runs.
 - [ ] Schedule `npm run leads:purge` daily.
 - [ ] Back up `data/` encrypted, and test a restore.
 - [ ] Have the privacy notice reviewed against Taiwan's PDPA before going live.
