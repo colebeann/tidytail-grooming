@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stop Messages · Tidytail</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/opt-out.js" defer></script>
+</head>
+<body>
+  <div class="demo-bar" role="note">Mock-up: every name, price, review and number on this site is sample data.</div>
+  <header class="site-header"><div class="wrap header-row"><a class="brand" href="/"><img class="brand-mark" src="/assets/favicon.svg" alt=""><span class="brand-name">Tidytail<small>Grooming Studio</small></span></a><a class="btn btn-ghost btn-sm" href="/">← Home</a></div></header>
+  <main class="page"><div class="wrap narrow">
+    <h1>Stop messages</h1>
+    <p>Enter the mobile number or email you gave us and we won't send you marketing messages again. Booking confirmations you ask for later will still reach you.</p>
+    <p lang="zh-Hant-TW" class="muted">輸入您留給我們的手機號碼或電子郵件，我們就不會再傳行銷訊息給您。</p>
+    <form id="optout-form" class="form" novalidate>
+      <div class="field">
+        <label for="contact">Mobile or email · 手機或電子郵件</label>
+        <input id="contact" name="contact" required minlength="5" maxlength="254" autocomplete="email">
+      </div>
+      <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn-primary btn-block" type="submit">Stop messages · 停止訊息</button>
+      <p class="form-status" id="optout-status" role="status" aria-live="polite"></p>
+    </form>
+  </div></main>
+  <footer class="site-footer"><div class="wrap footer-grid"><strong>Tidytail Grooming Studio</strong><nav aria-label="Footer"><a href="/privacy">Privacy notice</a><a href="/opt-out">Stop messages / opt out</a></nav><p class="muted fineprint">Mock-up, all data is fictional.</p></div></footer>
+</body>
+</html>

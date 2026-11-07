@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tidytail Grooming Studio</title>
+  <meta name="description" content="Calm, honest pet grooming in Dajia, Taichung. Start with a free coat and skin check. (Mock-up with sample data.)">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f7f1e8">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/i18n.js" defer></script>
+  <script src="/assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <div class="demo-bar" role="note">
+    <span data-i18n="demo">Mock-up: every name, price, review and number on this page is sample data.</span>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#top" aria-label="Tidytail Grooming Studio home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" class="mark-bg"/>
+          <ellipse cx="20" cy="25" rx="7" ry="6" class="mark-fg"/>
+          <ellipse cx="11.5" cy="17" rx="3" ry="3.8" class="mark-fg"/>
+          <ellipse cx="17" cy="11.5" rx="3" ry="3.8" class="mark-fg"/>
+          <ellipse cx="23" cy="11.5" rx="3" ry="3.8" class="mark-fg"/>
+          <ellipse cx="28.5" cy="17" rx="3" ry="3.8" class="mark-fg"/>
+        </svg>
+        <span class="brand-name">Tidytail<small data-i18n="brandSub">Grooming Studio</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only" data-i18n="menu">Menu</span><span class="burger" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="#services" data-i18n="navServices">Services</a>
+        <a href="#how" data-i18n="navHow">How it works</a>
+        <a href="#promises" data-i18n="navPromises">Our promises</a>
+        <a href="#reviews" data-i18n="navReviews">Reviews</a>
+        <a href="#faq" data-i18n="navFaq">FAQ</a>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <a class="btn btn-primary btn-sm" href="#book" data-i18n="ctaBook">Book a free check</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="heroEyebrow">Dajia, Taichung · Dogs, cats &amp; rabbits</p>
+          <h1 data-i18n="heroTitle">A calm, honest groom. It starts with a free coat &amp; skin check.</h1>
+          <p class="lede" data-i18n="heroLede">Bring your pet in for 15 minutes. We check coat, skin, ears, nails and mood, then send you a one-page report card on LINE. No pressure to book.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#book" data-i18n="ctaFree">Get my free check</a>
+            <a class="btn btn-ghost" href="#services" data-i18n="ctaPrices">See services &amp; prices</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt data-i18n="statRating">Google rating</dt><dd>4.9<span aria-hidden="true">★</span></dd></div>
+            <div><dt data-i18n="statGrooms">Grooms done</dt><dd>1,284</dd></div>
+            <div><dt data-i18n="statSedation">Sedation used</dt><dd>0</dd></div>
+          </dl>
+          <p class="fineprint" data-i18n="statNote">Sample numbers for the mock-up.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 420 380" class="illus">
+            <circle cx="210" cy="190" r="170" class="i-blob"/>
+            <g class="i-bubbles">
+              <circle cx="92" cy="96" r="18"/><circle cx="120" cy="62" r="10"/><circle cx="330" cy="80" r="14"/>
+              <circle cx="352" cy="118" r="8"/><circle cx="70" cy="160" r="9"/><circle cx="300" cy="46" r="7"/>
+            </g>
+            <path d="M70 250 h280 a10 10 0 0 1 10 10 c0 50 -40 80 -80 80 h-140 c-40 0 -80 -30 -80 -80 a10 10 0 0 1 10 -10z" class="i-tub"/>
+            <rect x="60" y="238" width="300" height="20" rx="10" class="i-tub-rim"/>
+            <g class="i-dog">
+              <ellipse cx="210" cy="232" rx="78" ry="40" class="i-fur"/>
+              <ellipse cx="210" cy="160" rx="62" ry="58" class="i-fur"/>
+              <ellipse cx="152" cy="150" rx="20" ry="40" transform="rotate(18 152 150)" class="i-ear"/>
+              <ellipse cx="268" cy="150" rx="20" ry="40" transform="rotate(-18 268 150)" class="i-ear"/>
+              <ellipse cx="210" cy="186" rx="30" ry="22" class="i-muzzle"/>
+              <ellipse cx="210" cy="176" rx="10" ry="7" class="i-nose"/>
+              <path d="M200 194 q10 9 20 0" class="i-line"/>
+              <circle cx="186" cy="150" r="6" class="i-eye"/><circle cx="234" cy="150" r="6" class="i-eye"/>
+              <circle cx="188" cy="148" r="2" class="i-shine"/><circle cx="236" cy="148" r="2" class="i-shine"/>
+            </g>
+            <g class="i-foam">
+              <circle cx="150" cy="236" r="22"/><circle cx="180" cy="242" r="20"/><circle cx="240" cy="242" r="22"/>
+              <circle cx="272" cy="236" r="20"/><circle cx="120" cy="244" r="16"/><circle cx="300" cy="244" r="16"/>
+              <circle cx="210" cy="104" r="16"/><circle cx="190" cy="110" r="12"/><circle cx="230" cy="110" r="12"/>
+            </g>
+          </svg>
+          <div class="float-card float-a">
+            <span class="dot dot-ok"></span>
+            <span><strong data-i18n="floatA1">Report card sent</strong><small data-i18n="floatA2">Mochi · coat: good</small></span>
+          </div>
+          <div class="float-card float-b">
+            <span class="dot dot-warn"></span>
+            <span><strong data-i18n="floatB1">Matting found</strong><small data-i18n="floatB2">Behind ears · gentle fix</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREE CHECK -->
+    <section class="section check" aria-labelledby="check-title">
+      <div class="wrap check-grid">
+        <div>
+          <p class="eyebrow" data-i18n="checkEyebrow">Free · 15 minutes · No obligation</p>
+          <h2 id="check-title" data-i18n="checkTitle">What the free coat &amp; skin check covers</h2>
+          <p data-i18n="checkLede">Every part is marked Good, Needs care or See a vet. Parts we didn't check are left out, so the report only says what we actually saw.</p>
+          <a class="btn btn-primary" href="#book" data-i18n="ctaFree">Get my free check</a>
+        </div>
+        <div class="report" role="img" aria-label="Sample report card">
+          <div class="report-head">
+            <span class="report-pet" data-i18n="repPet">Report card · Mochi (Shiba, 4 yrs)</span>
+            <span class="tag" data-i18n="sample">Sample</span>
+          </div>
+          <ul class="report-list">
+            <li><span data-i18n="repCoat">Coat &amp; undercoat</span><b class="pill pill-ok" data-i18n="good">Good</b></li>
+            <li><span data-i18n="repMat">Matting</span><b class="pill pill-warn" data-i18n="needs">Needs care</b></li>
+            <li><span data-i18n="repSkin">Skin &amp; hot spots</span><b class="pill pill-ok" data-i18n="good">Good</b></li>
+            <li><span data-i18n="repEars">Ears</span><b class="pill pill-ok" data-i18n="good">Good</b></li>
+            <li><span data-i18n="repNails">Nails &amp; paw pads</span><b class="pill pill-warn" data-i18n="needs">Needs care</b></li>
+            <li><span data-i18n="repTeeth">Teeth (look only)</span><b class="pill pill-vet" data-i18n="vet">See a vet</b></li>
+          </ul>
+          <p class="report-foot" data-i18n="repFoot">Suggested: Bath &amp; Tidy every 4 weeks · de-shed in spring</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <p class="eyebrow center" data-i18n="howEyebrow">How it works</p>
+        <h2 id="how-title" class="center" data-i18n="howTitle">Three steps, no surprises</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-n">1</span>
+            <h3 data-i18n="step1T">Free check</h3>
+            <p data-i18n="step1D">A 15-minute look at coat, skin and mood. You get the report card and a fixed price before we touch a brush.</p>
+          </li>
+          <li>
+            <span class="step-n">2</span>
+            <h3 data-i18n="step2T">Groom day</h3>
+            <p data-i18n="step2D">One groomer, one pet at a time. We send photo updates on LINE, so you're never wondering.</p>
+          </li>
+          <li>
+            <span class="step-n">3</span>
+            <h3 data-i18n="step3T">Report &amp; care plan</h3>
+            <p data-i18n="step3D">Before and after photos, notes for home care, and a suggested date for the next visit. Join the Care Club only if you want to.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section alt" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <p class="eyebrow center" data-i18n="svcEyebrow">Services</p>
+        <h2 id="services-title" class="center" data-i18n="svcTitle">Pick what your pet needs</h2>
+        <p class="center muted" data-i18n="svcNote">Sample prices for a small dog. The free check gives you an exact price before we start.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🫧</div>
+            <h3 data-i18n="s1T">Bath &amp; Tidy</h3>
+            <p class="price"><span data-i18n="from">from</span> NT$900</p>
+            <ul>
+              <li data-i18n="s1a">Low-scent shampoo &amp; conditioner</li>
+              <li data-i18n="s1b">Quiet hand-dry, brush-out</li>
+              <li data-i18n="s1c">Nails, ears, paw pads</li>
+            </ul>
+            <p class="dur" data-i18n="s1d">About 60–90 min</p>
+          </article>
+          <article class="card featured">
+            <span class="ribbon" data-i18n="popular">Most booked</span>
+            <div class="card-icon" aria-hidden="true">✂️</div>
+            <h3 data-i18n="s2T">Full Groom</h3>
+            <p class="price"><span data-i18n="from">from</span> NT$1,500</p>
+            <ul>
+              <li data-i18n="s2a">Everything in Bath &amp; Tidy</li>
+              <li data-i18n="s2b">Breed or custom haircut</li>
+              <li data-i18n="s2c">Sanitary &amp; face trim</li>
+            </ul>
+            <p class="dur" data-i18n="s2d">About 2–3 hours</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🌿</div>
+            <h3 data-i18n="s3T">Spa Day</h3>
+            <p class="price"><span data-i18n="from">from</span> NT$2,200</p>
+            <ul>
+              <li data-i18n="s3a">Full Groom + de-shed treatment</li>
+              <li data-i18n="s3b">Oatmeal skin soak</li>
+              <li data-i18n="s3c">Paw balm &amp; teeth brushing</li>
+            </ul>
+            <p class="dur" data-i18n="s3d">About 3–4 hours</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🐈</div>
+            <h3 data-i18n="s4T">Cat Calm Groom</h3>
+            <p class="price"><span data-i18n="from">from</span> NT$1,800</p>
+            <ul>
+              <li data-i18n="s4a">Cat-only hours, no dogs in the room</li>
+              <li data-i18n="s4b">Lion cut or comb-out</li>
+              <li data-i18n="s4c">Stops early if your cat is stressed</li>
+            </ul>
+            <p class="dur" data-i18n="s4d">About 1–2 hours</p>
+          </article>
+        </div>
+
+        <!-- Price estimator -->
+        <div class="estimator" aria-labelledby="est-title">
+          <div>
+            <h3 id="est-title" data-i18n="estTitle">Quick price estimate</h3>
+            <p class="muted" data-i18n="estNote">A rough guide. Coat condition can change the final price, and we always confirm it first.</p>
+          </div>
+          <div class="est-controls">
+            <label><span data-i18n="estService">Service</span>
+              <select id="est-service">
+                <option value="900" data-i18n="s1T">Bath &amp; Tidy</option>
+                <option value="1500" selected data-i18n="s2T">Full Groom</option>
+                <option value="2200" data-i18n="s3T">Spa Day</option>
+                <option value="1800" data-i18n="s4T">Cat Calm Groom</option>
+              </select>
+            </label>
+            <label><span data-i18n="estSize">Size</span>
+              <select id="est-size">
+                <option value="0.9" data-i18n="sizeToy">Toy (under 4 kg)</option>
+                <option value="1" selected data-i18n="sizeSmall">Small (4–10 kg)</option>
+                <option value="1.3" data-i18n="sizeMedium">Medium (10–20 kg)</option>
+                <option value="1.6" data-i18n="sizeLarge">Large (20–35 kg)</option>
+                <option value="2" data-i18n="sizeGiant">Giant (35 kg+)</option>
+              </select>
+            </label>
+            <label class="check-inline"><input type="checkbox" id="est-mat"> <span data-i18n="estMat">Heavy matting (+NT$300)</span></label>
+          </div>
+          <output id="est-out" class="est-out" for="est-service est-size est-mat" aria-live="polite">NT$1,500</output>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARE CLUB -->
+    <section class="section" aria-labelledby="club-title">
+      <div class="wrap">
+        <p class="eyebrow center" data-i18n="clubEyebrow">Care Club · monthly</p>
+        <h2 id="club-title" class="center" data-i18n="clubTitle">Keep the coat easy between visits</h2>
+        <p class="center muted" data-i18n="clubNote">Prepaid month to month. Pause or stop any time, no fee.</p>
+        <div class="plans">
+          <article class="plan">
+            <h3 data-i18n="p1T">Fresh</h3>
+            <p class="plan-price">NT$800<span data-i18n="perMonth">/month</span></p>
+            <ul>
+              <li data-i18n="p1a">1 Bath &amp; Tidy a month</li>
+              <li data-i18n="p1b">Free nail trims any time</li>
+              <li data-i18n="p1c">Report card each visit</li>
+            </ul>
+          </article>
+          <article class="plan plan-hl">
+            <h3 data-i18n="p2T">Tidy</h3>
+            <p class="plan-price">NT$1,500<span data-i18n="perMonth">/month</span></p>
+            <ul>
+              <li data-i18n="p2a">2 Bath &amp; Tidy visits a month</li>
+              <li data-i18n="p2b">Free de-shed in spring &amp; autumn</li>
+              <li data-i18n="p2c">Priority weekend slots</li>
+            </ul>
+          </article>
+          <article class="plan">
+            <h3 data-i18n="p3T">Show-ready</h3>
+            <p class="plan-price">NT$2,600<span data-i18n="perMonth">/month</span></p>
+            <ul>
+              <li data-i18n="p3a">1 Full Groom + 1 bath a month</li>
+              <li data-i18n="p3b">Free pick-up within Dajia</li>
+              <li data-i18n="p3c">Monthly coat &amp; skin report</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMISES -->
+    <section class="section alt" id="promises" aria-labelledby="promises-title">
+      <div class="wrap">
+        <p class="eyebrow center" data-i18n="promEyebrow">Our promises</p>
+        <h2 id="promises-title" class="center" data-i18n="promTitle">What we will and won't do</h2>
+        <div class="promises">
+          <div class="promise"><h3 data-i18n="pr1T">No sedation, ever</h3><p data-i18n="pr1D">If your pet is too stressed, we stop, tell you, and try again another day at no charge.</p></div>
+          <div class="promise"><h3 data-i18n="pr2T">Real reviews only</h3><p data-i18n="pr2D">We never buy, fake, filter or delete reviews. We only ask real customers to share an honest one.</p></div>
+          <div class="promise"><h3 data-i18n="pr3T">Your pet's records are yours</h3><p data-i18n="pr3D">Ask for your photos, notes and history any time, and we'll send them. Ask us to delete them and we will.</p></div>
+          <div class="promise"><h3 data-i18n="pr4T">Price agreed first</h3><p data-i18n="pr4D">You see the price after the free check and before we start. If we find something new, we call you first.</p></div>
+          <div class="promise"><h3 data-i18n="pr5T">One groomer, one pet</h3><p data-i18n="pr5D">No cages full of dogs waiting. Your pet has one groomer from start to finish.</p></div>
+          <div class="promise"><h3 data-i18n="pr6T">Stop messages any time</h3><p data-i18n="pr6D">Say "stop" on LINE or use our opt-out page. We stop at once and won't message you again.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="section" aria-labelledby="ba-title">
+      <div class="wrap ba-grid">
+        <div>
+          <p class="eyebrow" data-i18n="baEyebrow">Before &amp; after</p>
+          <h2 id="ba-title" data-i18n="baTitle">Bao, a 6-year-old Poodle mix</h2>
+          <p data-i18n="baD">Matted coat, itchy belly, scared of dryers. Two visits: a gentle de-mat and oatmeal soak, then a short puppy cut. Drag the slider to compare.</p>
+          <p class="fineprint" data-i18n="baNote">Illustration for the mock-up. Real photos are shown only with the owner's written permission.</p>
+        </div>
+        <div class="compare" id="compare">
+          <svg viewBox="0 0 400 300" class="cmp-layer cmp-after" aria-hidden="true">
+            <rect width="400" height="300" class="c-bg-after"/>
+            <ellipse cx="200" cy="215" rx="90" ry="45" class="c-tidy"/>
+            <circle cx="200" cy="130" r="58" class="c-tidy"/>
+            <circle cx="200" cy="78" r="26" class="c-tidy"/>
+            <ellipse cx="146" cy="140" rx="18" ry="30" class="c-tidy-ear"/>
+            <ellipse cx="254" cy="140" rx="18" ry="30" class="c-tidy-ear"/>
+            <circle cx="180" cy="128" r="6" class="i-eye"/><circle cx="220" cy="128" r="6" class="i-eye"/>
+            <ellipse cx="200" cy="150" rx="9" ry="6" class="i-nose"/>
+            <path d="M190 164 q10 8 20 0" class="i-line"/>
+            <text x="370" y="34" text-anchor="end" class="c-label" data-i18n="after">After</text>
+          </svg>
+          <div class="cmp-before" id="cmp-before">
+            <svg viewBox="0 0 400 300" class="cmp-layer" aria-hidden="true">
+              <rect width="400" height="300" class="c-bg-before"/>
+              <g class="c-shaggy">
+                <circle cx="130" cy="210" r="40"/><circle cx="180" cy="230" r="44"/><circle cx="230" cy="230" r="44"/>
+                <circle cx="275" cy="208" r="40"/><circle cx="200" cy="200" r="50"/>
+                <circle cx="150" cy="120" r="40"/><circle cx="250" cy="120" r="40"/><circle cx="200" cy="96" r="46"/>
+                <circle cx="200" cy="140" r="50"/><circle cx="130" cy="160" r="30"/><circle cx="270" cy="160" r="30"/>
+              </g>
+              <circle cx="182" cy="132" r="5" class="i-eye"/><circle cx="218" cy="132" r="5" class="i-eye"/>
+              <ellipse cx="200" cy="154" rx="9" ry="6" class="i-nose"/>
+              <text x="30" y="34" class="c-label" data-i18n="before">Before</text>
+            </svg>
+          </div>
+          <span class="cmp-handle" id="cmp-handle" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" id="cmp-range" class="cmp-range" aria-label="Compare before and after">
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section alt" aria-labelledby="team-title">
+      <div class="wrap">
+        <p class="eyebrow center" data-i18n="teamEyebrow">The team</p>
+        <h2 id="team-title" class="center" data-i18n="teamTitle">Groomers who go slowly</h2>
+        <div class="team">
+          <figure class="member"><span class="avatar av1" aria-hidden="true">YL</span><figcaption><strong>Yu-Ling C.</strong><span data-i18n="t1">Lead groomer · 9 yrs · Cat specialist</span></figcaption></figure>
+          <figure class="member"><span class="avatar av2" aria-hidden="true">JR</span><figcaption><strong>Jun-Rui W.</strong><span data-i18n="t2">Groomer · 5 yrs · Doodles &amp; poodles</span></figcaption></figure>
+          <figure class="member"><span class="avatar av3" aria-hidden="true">AM</span><figcaption><strong>Ana M.</strong><span data-i18n="t3">Bather · 3 yrs · Nervous &amp; senior pets</span></figcaption></figure>
+        </div>
+        <p class="center fineprint" data-i18n="teamNote">Sample team members for the mock-up.</p>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews" aria-labelledby="reviews-title">
+      <div class="wrap">
+        <p class="eyebrow center" data-i18n="revEyebrow">Reviews</p>
+        <h2 id="reviews-title" class="center" data-i18n="revTitle">What pet parents say</h2>
+        <div class="reviews">
+          <blockquote class="review"><p class="stars" aria-label="5 out of 5">★★★★★</p><p data-i18n="r1">Mochi usually hides from the dryer. Here they used a towel and a quiet fan, and he came out relaxed. The LINE photos were a nice touch.</p><footer>— Mrs. Lin · Shiba <span class="tag" data-i18n="sample">Sample</span></footer></blockquote>
+          <blockquote class="review"><p class="stars" aria-label="5 out of 5">★★★★★</p><p data-i18n="r2">They told me the price before starting and called when they found a small lump. I liked that they said "see a vet" and didn't try to sell me anything.</p><footer>— Kevin H. · Golden Retriever <span class="tag" data-i18n="sample">Sample</span></footer></blockquote>
+          <blockquote class="review"><p class="stars" aria-label="4 out of 5">★★★★☆</p><p data-i18n="r3">Great cat-only hours. Booking a weekend slot took a week, but the groom was worth the wait.</p><footer>— Pei-Shan T. · Persian cat <span class="tag" data-i18n="sample">Sample</span></footer></blockquote>
+          <blockquote class="review"><p class="stars" aria-label="5 out of 5">★★★★★</p><p data-i18n="r4">Our senior dog has arthritis. They let him lie down for the whole trim and finished in short breaks.</p><footer>— The Chen family · Corgi, 13 yrs <span class="tag" data-i18n="sample">Sample</span></footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREA & HOURS -->
+    <section class="section alt" aria-labelledby="area-title">
+      <div class="wrap area-grid">
+        <div>
+          <h2 id="area-title" data-i18n="areaTitle">Where &amp; when</h2>
+          <p data-i18n="areaD">Studio in Dajia. Free pick-up for Show-ready members within Dajia; NT$150 to Qingshui, Waipu, Wuqi and Shalu.</p>
+          <address>
+            <span data-i18n="addr">No. 00, Sample Road, Dajia District, Taichung (sample address)</span><br>
+            LINE: @tidytail-demo · 04-0000-0000
+          </address>
+        </div>
+        <table class="hours">
+          <caption class="sr-only" data-i18n="hoursCap">Opening hours</caption>
+          <tbody>
+            <tr><th scope="row" data-i18n="monFri">Mon – Fri</th><td>10:00 – 19:00</td></tr>
+            <tr><th scope="row" data-i18n="sat">Saturday</th><td>09:00 – 18:00</td></tr>
+            <tr><th scope="row" data-i18n="sun">Sunday</th><td>09:00 – 14:00 <span class="tag" data-i18n="catOnly">Cats only</span></td></tr>
+            <tr><th scope="row" data-i18n="wed">Wednesday</th><td data-i18n="closed">Closed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap narrow">
+        <h2 id="faq-title" class="center" data-i18n="faqTitle">Questions</h2>
+        <details><summary data-i18n="q1">Is the free check really free?</summary><p data-i18n="a1">Yes. It takes about 15 minutes and you don't have to book anything after it. You keep the report card either way.</p></details>
+        <details><summary data-i18n="q2">Do you need vaccination records?</summary><p data-i18n="a2">Yes, please bring a rabies and core vaccine record at the first visit. We keep a copy only with your permission.</p></details>
+        <details><summary data-i18n="q3">What if my pet bites or panics?</summary><p data-i18n="a3">We take breaks, use muzzles only if you agree, and stop if it isn't safe. We never sedate. You only pay for what we finished.</p></details>
+        <details><summary data-i18n="q4">How do I pay?</summary><p data-i18n="a4">Cash, LINE Pay or card on the day. Care Club is prepaid at the start of each month and you can stop any time.</p></details>
+        <details><summary data-i18n="q5">What do you do with my details?</summary><p data-i18n="a5">We use them only to arrange your pet's visit. They are encrypted on our server, never sold, and deleted after 12 months without a visit. See our privacy notice.</p></details>
+      </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section class="section book" id="book" aria-labelledby="book-title">
+      <div class="wrap book-grid">
+        <div class="book-intro">
+          <p class="eyebrow" data-i18n="bookEyebrow">Book</p>
+          <h2 id="book-title" data-i18n="bookTitle">Ask for a free check or a groom</h2>
+          <p data-i18n="bookD">Fill this in and we'll reply on LINE or by phone within one working day to confirm a time. Nothing is booked or charged until you confirm.</p>
+          <ul class="ticks">
+            <li data-i18n="tick1">Takes about 1 minute</li>
+            <li data-i18n="tick2">Encrypted and never sold</li>
+            <li data-i18n="tick3">Opt out any time</li>
+          </ul>
+        </div>
+
+        <form id="lead-form" class="form" novalidate>
+          <fieldset>
+            <legend data-i18n="fsYou">About you</legend>
+            <div class="field">
+              <label for="ownerName" data-i18n="fName">Your name</label>
+              <input id="ownerName" name="ownerName" autocomplete="name" required minlength="2" maxlength="80">
+              <p class="err" id="err-ownerName" role="alert"></p>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="phone" data-i18n="fPhone">Mobile</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="0912 345 678">
+                <p class="err" id="err-phone" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="lineId" data-i18n="fLine">LINE ID <small>(optional)</small></label>
+                <input id="lineId" name="lineId" maxlength="40" autocomplete="off" spellcheck="false">
+                <p class="err" id="err-lineId" role="alert"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="email" data-i18n="fEmail">Email <small>(optional)</small></label>
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="254">
+              <p class="err" id="err-email" role="alert"></p>
+            </div>
+            <p class="hint" data-i18n="fContactHint">Give at least one: mobile, LINE ID or email.</p>
+          </fieldset>
+
+          <fieldset>
+            <legend data-i18n="fsPet">About your pet</legend>
+            <div class="row">
+              <div class="field">
+                <label for="petName" data-i18n="fPetName">Pet's name</label>
+                <input id="petName" name="petName" required maxlength="40" autocomplete="off">
+                <p class="err" id="err-petName" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="species" data-i18n="fSpecies">Type</label>
+                <select id="species" name="species" required>
+                  <option value="dog" data-i18n="dog">Dog</option>
+                  <option value="cat" data-i18n="cat">Cat</option>
+                  <option value="rabbit" data-i18n="rabbit">Rabbit</option>
+                  <option value="other" data-i18n="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="breed" data-i18n="fBreed">Breed <small>(optional)</small></label>
+                <input id="breed" name="breed" maxlength="60" autocomplete="off">
+                <p class="err" id="err-breed" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="size" data-i18n="fSize">Size</label>
+                <select id="size" name="size" required>
+                  <option value="toy" data-i18n="sizeToy">Toy (under 4 kg)</option>
+                  <option value="small" selected data-i18n="sizeSmall">Small (4–10 kg)</option>
+                  <option value="medium" data-i18n="sizeMedium">Medium (10–20 kg)</option>
+                  <option value="large" data-i18n="sizeLarge">Large (20–35 kg)</option>
+                  <option value="giant" data-i18n="sizeGiant">Giant (35 kg+)</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <span class="label" id="concerns-label" data-i18n="fConcerns">Anything we should know? <small>(optional)</small></span>
+              <div class="chips" role="group" aria-labelledby="concerns-label">
+                <label class="chip"><input type="checkbox" name="concerns" value="matting"><span data-i18n="cMatting">Matting</span></label>
+                <label class="chip"><input type="checkbox" name="concerns" value="shedding"><span data-i18n="cShedding">Heavy shedding</span></label>
+                <label class="chip"><input type="checkbox" name="concerns" value="itchy-skin"><span data-i18n="cItchy">Itchy skin</span></label>
+                <label class="chip"><input type="checkbox" name="concerns" value="nails"><span data-i18n="cNails">Hates nail trims</span></label>
+                <label class="chip"><input type="checkbox" name="concerns" value="anxiety"><span data-i18n="cAnxiety">Nervous</span></label>
+                <label class="chip"><input type="checkbox" name="concerns" value="senior"><span data-i18n="cSenior">Senior</span></label>
+                <label class="chip"><input type="checkbox" name="concerns" value="odor"><span data-i18n="cOdor">Smells soon after a bath</span></label>
+                <label class="chip"><input type="checkbox" name="concerns" value="puppy-first"><span data-i18n="cPuppy">First groom</span></label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend data-i18n="fsVisit">Visit</legend>
+            <div class="row">
+              <div class="field">
+                <label for="service" data-i18n="fService">What would you like?</label>
+                <select id="service" name="service" required>
+                  <option value="free-check" data-i18n="optFree">Free coat &amp; skin check</option>
+                  <option value="bath-tidy" data-i18n="s1T">Bath &amp; Tidy</option>
+                  <option value="full-groom" data-i18n="s2T">Full Groom</option>
+                  <option value="spa-day" data-i18n="s3T">Spa Day</option>
+                  <option value="cat-calm" data-i18n="s4T">Cat Calm Groom</option>
+                  <option value="care-club" data-i18n="optClub">Care Club (monthly)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="district" data-i18n="fDistrict">Area</label>
+                <select id="district" name="district" required>
+                  <option value="dajia" data-i18n="dDajia">Dajia</option>
+                  <option value="qingshui" data-i18n="dQingshui">Qingshui</option>
+                  <option value="shalu" data-i18n="dShalu">Shalu</option>
+                  <option value="wuqi" data-i18n="dWuqi">Wuqi</option>
+                  <option value="waipu" data-i18n="dWaipu">Waipu</option>
+                  <option value="other" data-i18n="dOther">Somewhere else</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="preferredDate" data-i18n="fDate">Preferred date <small>(optional)</small></label>
+              <input id="preferredDate" name="preferredDate" type="date">
+              <p class="err" id="err-preferredDate" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="notes" data-i18n="fNotes">Notes <small>(optional)</small></label>
+              <textarea id="notes" name="notes" rows="3" maxlength="500"></textarea>
+              <p class="counter"><span id="notes-count">0</span>/500</p>
+              <p class="err" id="err-notes" role="alert"></p>
+            </div>
+          </fieldset>
+
+          <!-- Honeypot: hidden from people and screen readers, bots fill it in. -->
+          <div class="hp" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="consent">
+            <label class="check-inline">
+              <input type="checkbox" id="consentPrivacy" name="consentPrivacy" required>
+              <span><span data-i18n="cPrivacy">I agree that Tidytail uses these details to arrange my pet's visit, as described in the</span> <a href="/privacy" data-i18n="privacyLink">privacy notice</a>.</span>
+            </label>
+            <p class="err" id="err-consentPrivacy" role="alert"></p>
+            <label class="check-inline">
+              <input type="checkbox" id="consentMarketing" name="consentMarketing">
+              <span data-i18n="cMarketing">Optional: send me grooming reminders and seasonal offers on LINE. I can stop any time.</span>
+            </label>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit" id="submit-btn" data-i18n="submit">Send request</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="success" id="success" hidden tabindex="-1">
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h3 data-i18n="okTitle">Got it, thank you!</h3>
+          <p><span data-i18n="okD">We'll reply within one working day. Your reference is</span> <strong id="ref"></strong>.</p>
+          <button type="button" class="btn btn-ghost" id="again" data-i18n="okAgain">Send another request</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Tidytail Grooming Studio</strong>
+        <p class="muted" data-i18n="footD">Calm, honest grooming in Dajia, Taichung.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="/privacy" data-i18n="privacy">Privacy notice</a>
+        <a href="/opt-out" data-i18n="optOut">Stop messages / opt out</a>
+        <a href="#faq" data-i18n="navFaq">FAQ</a>
+      </nav>
+      <p class="muted fineprint">© <span id="year">2026</span> Tidytail · <span data-i18n="footMock">Mock-up, all data is fictional.</span></p>
+    </div>
+  </footer>
+</body>
+</html>

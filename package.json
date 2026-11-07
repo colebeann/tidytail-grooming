@@ -1,0 +1,31 @@
+{
+  "name": "tidytail-grooming",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mock-up landing page and secure lead capture for a pet grooming studio (dummy data only).",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/*.test.js",
+    "audit": "npm audit --audit-level=high",
+    "keys": "node scripts/generate-secrets.js",
+    "leads:export": "node scripts/export-leads.js",
+    "leads:purge": "node scripts/purge-leads.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "cookie-parser": "1.4.7",
+    "express": "5.3.0",
+    "express-rate-limit": "8.7.3",
+    "helmet": "8.3.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "supertest": "7.3.2"
+  }
+}
