@@ -13,3 +13,7 @@ updates:
   - package-ecosystem: docker
     directory: /
     schedule: { interval: monthly }
+    # Stay on Node LTS (22); move to the next LTS on purpose, not via a bot.
+    ignore:
+      - dependency-name: node
+        update-types: [version-update:semver-major]
