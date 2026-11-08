@@ -15,6 +15,25 @@ let master = null;
 let on = false;
 let music = null;
 
+// Background music sits well under the effects:
+// - MUSIC_LEVEL keeps it at roughly a quarter of an effect's loudness
+// - a low-pass filter takes the sparkle off so it doesn't compete for attention
+// - every effect "ducks" the music for a moment so pops and chimes always cut through
+const MUSIC_LEVEL = 0.32;
+const DUCK_TO = 0.3; // music drops to 30% of its level while an effect plays
+let musicGain = null;
+
+function duck(hold = 0.35) {
+  if (!musicGain) return;
+  const now = ctx.currentTime;
+  const g = musicGain.gain;
+  g.cancelScheduledValues(now);
+  g.setValueAtTime(g.value, now);
+  g.linearRampToValueAtTime(MUSIC_LEVEL * DUCK_TO, now + 0.02);
+  g.setValueAtTime(MUSIC_LEVEL * DUCK_TO, now + hold);
+  g.linearRampToValueAtTime(MUSIC_LEVEL, now + hold + 0.4);
+}
+
 // ---------- Engine ----------
 function audio() {
   if (!ctx) {
@@ -198,6 +217,15 @@ export const sfx = {
   },
 };
 
+// Every effect ducks the music; longer effects hold the duck longer.
+const HOLD = { hover: 0.15, pop: 0.25, boing: 0.4, bubble: 0.25, till: 0.3, chime: 0.5, error: 0.5, success: 1.6, hello: 0.6 };
+for (const [name, fn] of Object.entries(sfx)) {
+  sfx[name] = (...args) => {
+    if (on || name === 'hello') duck(HOLD[name] ?? 0.3);
+    return fn(...args);
+  };
+}
+
 // ---------- Music ----------
 // 8 bars of 8 eighth-notes. Numbers are MIDI notes; 0 is a rest.
 const BPM = 108;
@@ -217,10 +245,16 @@ const COMP = [[64, 67], [64, 69], [65, 69], [62, 67], [64, 67], [64, 69], [65, 6
 
 function startMusic() {
   const a = audio();
+  // Notes go into `bus`, then a soft low-pass, then `musicGain` (faded in and ducked).
   const bus = a.createGain();
-  bus.gain.value = 0.0001;
-  bus.gain.setTargetAtTime(1.15, a.currentTime, 0.4);
-  bus.connect(master);
+  const soften = a.createBiquadFilter();
+  soften.type = 'lowpass';
+  soften.frequency.value = 2400;
+  soften.Q.value = 0.5;
+  musicGain = a.createGain();
+  musicGain.gain.value = 0.0001;
+  musicGain.gain.setTargetAtTime(MUSIC_LEVEL, a.currentTime, 0.6);
+  bus.connect(soften).connect(musicGain).connect(master);
 
   let step = 0;
   let loop = 0;
@@ -249,8 +283,11 @@ function startMusic() {
   return {
     stop() {
       clearInterval(timer);
-      bus.gain.setTargetAtTime(0.0001, a.currentTime, 0.15);
-      setTimeout(() => bus.disconnect(), 1200);
+      const g = musicGain;
+      musicGain = null;
+      g.gain.cancelScheduledValues(a.currentTime);
+      g.gain.setTargetAtTime(0.0001, a.currentTime, 0.15);
+      setTimeout(() => g.disconnect(), 1200);
     },
   };
 }
