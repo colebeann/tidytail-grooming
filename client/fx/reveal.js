@@ -13,7 +13,7 @@ function heroIntro() {
   tl.from(split.chars, { yPercent: 120, rotate: 8, duration: 1, stagger: 0.018, ease: 'expo.out' })
     .from('.hero .eyebrow', { y: 16, autoAlpha: 0, duration: 0.6 }, 0)
     .from('.hero .foam-line path', { strokeDashoffset: 600, duration: 1.4, ease: 'power2.inOut' }, 0.5)
-    .from('.hero .lede, .hero-ctas > *', { y: 24, autoAlpha: 0, stagger: 0.08 }, 0.45)
+    .from('.hero .lede, .hero-ctas', { y: 24, autoAlpha: 0, stagger: 0.08, clearProps: 'transform' }, 0.45)
     .from('.hero-stats > div', { y: 20, autoAlpha: 0, stagger: 0.08 }, 0.7)
     .from('.hero-art .illus', { scale: 0.85, autoAlpha: 0, duration: 1.2, ease: 'back.out(1.6)' }, 0.2)
     .from('.float-card', { y: 30, scale: 0.8, autoAlpha: 0, stagger: 0.15, ease: 'back.out(2)' }, 0.9);

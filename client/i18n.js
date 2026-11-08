@@ -10,7 +10,7 @@ export const ZH = {
   heroEyebrow: '台中大甲 · 狗狗、貓咪與兔兔',
   heroTitle: '溫柔、誠實的美容，從一次免費毛髮與皮膚檢查開始。',
   heroLede: '只要 15 分鐘，我們檢查毛髮、皮膚、耳朵、指甲和情緒，再用 LINE 傳給您一頁報告卡。沒有任何預約壓力。',
-  statRating: 'Google 評分', statGrooms: '已完成美容', statSedation: '使用鎮定劑', statNote: '樣稿用範例數字。',
+  statRating: 'Google 評分', statGrooms: '已完成美容', statRebook: '毛爸媽回訪率', estBook: '預約這個服務', statNote: '樣稿用範例數字。',
   floatA1: '報告卡已傳送', floatA2: '麻糬 · 毛況：良好', floatB1: '發現毛結', floatB2: '耳後 · 溫和處理',
   checkEyebrow: '免費 · 15 分鐘 · 不必預約後續服務',
   checkTitle: '免費毛髮與皮膚檢查包含什麼',
@@ -87,7 +87,7 @@ export const ZH = {
   errPhone: '請輸入正確的手機號碼。', errLine: 'LINE ID 只能包含英數字與 . _ - @。', errConsent: '需要您的同意才能處理預約。',
   errDate: '請選擇今天起 120 天內的日期。', errServer: '目前無法送出，請稍後再試，或直接用 LINE 聯絡我們。', errFields: '請檢查標示的欄位。',
   // Motion & sound
-  sound: '音效', soundOn: '開啟洗澡音效', soundOff: '關閉音效', soundHint: '試試洗澡音效 🫧', progress: '頁面進度', popHint: '偷偷說：點點看泡泡',
+  themeDark: '切換深色模式', themeLight: '切換淺色模式', sound: '音效', soundOn: '開啟洗澡音效', soundOff: '關閉音效', soundHint: '試試洗澡音效 🫧', progress: '頁面進度', popHint: '偷偷說：點點看泡泡',
   // Opt-out page
   ooTitle: '停止訊息', ooD: '輸入您留給我們的手機號碼或電子郵件，我們就不會再傳行銷訊息給您。', ooLabel: '手機或電子郵件', ooSubmit: '停止訊息', ooBack: '回首頁',
 };

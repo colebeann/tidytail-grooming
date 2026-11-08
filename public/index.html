@@ -8,6 +8,7 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#f7f1e8">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script src="/assets/theme.js"></script>
   <link rel="stylesheet" href="/assets/styles.css?v=2">
   <script type="module" src="/assets/dist/app.js"></script>
 </head>
@@ -63,6 +64,20 @@
           </button>
           <span class="sound-hint" id="sound-hint" role="status" hidden><span data-i18n="soundHint">Try bath-time sounds 🫧</span></span>
         </span>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <defs>
+              <mask id="tt-moon-mask">
+                <rect width="24" height="24" fill="#fff"/>
+                <circle class="moon-bite" cx="25" cy="3" r="7.5" fill="#000"/>
+              </mask>
+            </defs>
+            <circle class="sun-core" cx="12" cy="12" r="5" mask="url(#tt-moon-mask)"/>
+            <g class="sun-rays">
+              <path d="M12 1.8v2.4M12 19.8v2.4M1.8 12h2.4M19.8 12h2.4M4.8 4.8l1.7 1.7M17.5 17.5l1.7 1.7M4.8 19.2l1.7-1.7M17.5 6.5l1.7-1.7"/>
+            </g>
+          </svg>
+        </button>
         <div class="lang" role="group" aria-label="Language">
           <button type="button" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" data-lang="zh" aria-pressed="false">中文</button>
@@ -89,7 +104,7 @@
           <dl class="hero-stats">
             <div><dt data-i18n="statRating">Google rating</dt><dd data-count="4.9">4.9<span aria-hidden="true">★</span></dd></div>
             <div><dt data-i18n="statGrooms">Grooms done</dt><dd data-count="1284">1,284</dd></div>
-            <div><dt data-i18n="statSedation">Sedation used</dt><dd>0</dd></div>
+            <div><dt data-i18n="statRebook">Pet parents who rebook</dt><dd data-count="96">96<span aria-hidden="true">%</span></dd></div>
           </dl>
           <p class="fineprint" data-i18n="statNote">Sample numbers for the mock-up.</p>
           <p class="pop-hint" aria-hidden="true" data-i18n="popHint">Psst: click the bubbles</p>
@@ -258,24 +273,27 @@
           <div class="est-controls">
             <label><span data-i18n="estService">Service</span>
               <select id="est-service">
-                <option value="900" data-i18n="s1T">Bath &amp; Tidy</option>
-                <option value="1500" selected data-i18n="s2T">Full Groom</option>
-                <option value="2200" data-i18n="s3T">Spa Day</option>
-                <option value="1800" data-i18n="s4T">Cat Calm Groom</option>
+                <option value="900" data-service="bath-tidy" data-i18n="s1T">Bath &amp; Tidy</option>
+                <option value="1500" data-service="full-groom" selected data-i18n="s2T">Full Groom</option>
+                <option value="2200" data-service="spa-day" data-i18n="s3T">Spa Day</option>
+                <option value="1800" data-service="cat-calm" data-i18n="s4T">Cat Calm Groom</option>
               </select>
             </label>
             <label><span data-i18n="estSize">Size</span>
               <select id="est-size">
-                <option value="0.9" data-i18n="sizeToy">Toy (under 4 kg)</option>
-                <option value="1" selected data-i18n="sizeSmall">Small (4–10 kg)</option>
-                <option value="1.3" data-i18n="sizeMedium">Medium (10–20 kg)</option>
-                <option value="1.6" data-i18n="sizeLarge">Large (20–35 kg)</option>
-                <option value="2" data-i18n="sizeGiant">Giant (35 kg+)</option>
+                <option value="0.9" data-size="toy" data-i18n="sizeToy">Toy (under 4 kg)</option>
+                <option value="1" data-size="small" selected data-i18n="sizeSmall">Small (4–10 kg)</option>
+                <option value="1.3" data-size="medium" data-i18n="sizeMedium">Medium (10–20 kg)</option>
+                <option value="1.6" data-size="large" data-i18n="sizeLarge">Large (20–35 kg)</option>
+                <option value="2" data-size="giant" data-i18n="sizeGiant">Giant (35 kg+)</option>
               </select>
             </label>
             <label class="check-inline"><input type="checkbox" id="est-mat"> <span data-i18n="estMat">Heavy matting (+NT$300)</span></label>
           </div>
-          <output id="est-out" class="est-out" for="est-service est-size est-mat" aria-live="polite">NT$1,500</output>
+          <div class="est-result">
+            <output id="est-out" class="est-out" for="est-service est-size est-mat" aria-live="polite">NT$1,500</output>
+            <a class="btn btn-primary btn-sm" href="#book" id="est-book" data-i18n="estBook">Book this groom</a>
+          </div>
         </div>
       </div>
     </section>
