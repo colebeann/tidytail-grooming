@@ -146,7 +146,7 @@ export function initBubbles(hero) {
     }
     if (!hit) return;
     hit.pop = 1;
-    document.dispatchEvent(new CustomEvent('tt:pop', { detail: { pitch: 1.4 - hit.r * 0.6 } }));
+    document.dispatchEvent(new CustomEvent('tt:pop', { detail: { size: hit.r / 0.85 } }));
     for (let k = 0; k < 10; k++) {
       const d = droplets[dropIdx++ % DROPS];
       const a = (k / 10) * Math.PI * 2 + Math.random() * 0.4;
