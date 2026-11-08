@@ -87,7 +87,11 @@ test('valid lead is stored encrypted', async () => {
   assert.equal(res.status, 201);
   assert.match(res.body.reference, /^TT-[0-9A-F]{8}$/);
   const raw = await fs.readFile(path.join(dataDir, 'leads.jsonl'), 'utf8');
-  assert.doesNotMatch(raw, /Test Owner|0912|Mochi|test\.owner/);
+  // Look for whole plaintext values. (A 4-digit fragment such as "0912" used to
+  // match random hex in the hashes/IDs about once in a few hundred runs.)
+  for (const plain of ['Test Owner', '0912 345 678', '0912345678', 'Mochi', 'test.owner', 'Shy with dryers']) {
+    assert.ok(!raw.includes(plain), `plaintext "${plain}" found in storage`);
+  }
   const stat = await fs.stat(path.join(dataDir, 'leads.jsonl'));
   assert.equal(stat.mode & 0o077, 0, 'file must not be group/world readable');
 });

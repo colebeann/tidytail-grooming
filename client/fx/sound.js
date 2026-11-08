@@ -369,6 +369,15 @@ export function initSound() {
     else if (e.target.closest('.btn, .site-nav a')) sfx.pop();
   });
   $$('[data-lang]').forEach((b) => b.addEventListener('click', () => sfx.chime()));
+  // Light/dark: a glockenspiel step down into night, up into day.
+  document.addEventListener('tt:theme', (e) => {
+    if (!on) return;
+    duck(0.5);
+    const now = audio().currentTime;
+    const [a, b] = e.detail?.theme === 'dark' ? [88, 81] : [81, 88];
+    glock(a, now, 0.06);
+    glock(b, now + 0.1, 0.05);
+  });
   document.addEventListener('tt:lang', sync);
   document.addEventListener('tt:pop', (e) => sfx.bubble(e.detail?.size ?? 0.5));
   document.addEventListener('tt:estimate', () => sfx.till());

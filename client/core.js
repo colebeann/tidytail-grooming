@@ -17,7 +17,7 @@ const EN = {
   errPhone: 'Please enter a valid mobile number.', errLine: 'LINE ID can only use letters, numbers and . _ - @',
   errConsent: 'We need your consent to handle the request.', errDate: 'Please pick a date within the next 120 days.',
   errServer: "We couldn't send this right now. Please try again, or message us on LINE.", errFields: 'Please check the highlighted fields.',
-  sending: 'Sending…', submit: 'Send request', sound: 'Sound', soundOn: 'Turn on bath-time sounds', soundOff: 'Turn sound off',
+  sending: 'Sending…', submit: 'Send request', themeDark: 'Switch to dark mode', themeLight: 'Switch to light mode', sound: 'Sound', soundOn: 'Turn on bath-time sounds', soundOff: 'Turn sound off',
 };
 export let lang = 'en';
 
@@ -245,7 +245,41 @@ function initForm() {
   });
 }
 
+// ---------- Light / dark ----------
+// No saved choice: follow the device. Once the visitor picks, remember it.
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+export const currentTheme = () =>
+  document.documentElement.getAttribute('data-theme') || (darkQuery.matches ? 'dark' : 'light');
+
+function initTheme() {
+  const btn = $('#theme-toggle');
+  const meta = $('meta[name="theme-color"]');
+  const sync = () => {
+    const dark = currentTheme() === 'dark';
+    btn?.classList.toggle('is-dark', dark);
+    const label = dark ? t('themeLight') : t('themeDark');
+    btn?.setAttribute('aria-label', label);
+    if (btn) btn.title = label;
+    meta?.setAttribute('content', dark ? '#141c1b' : '#f7f1e8');
+  };
+  sync();
+  darkQuery.addEventListener('change', sync);
+  document.addEventListener('tt:lang', sync);
+  btn?.addEventListener('click', () => {
+    const next = currentTheme() === 'dark' ? 'light' : 'dark';
+    const root = document.documentElement;
+    // Colours ease across instead of snapping.
+    root.classList.add('theme-anim');
+    root.setAttribute('data-theme', next);
+    store.set('tt-theme', next);
+    sync();
+    emit('tt:theme', { theme: next });
+    setTimeout(() => root.classList.remove('theme-anim'), 500);
+  });
+}
+
 export function initCore() {
+  initTheme();
   initLang();
   initNav();
   initEstimator();
