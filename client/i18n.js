@@ -10,7 +10,7 @@ export const ZH = {
   heroEyebrow: '台中大甲 · 狗狗、貓咪與兔兔',
   heroTitle: '溫柔、誠實的美容，從一次免費毛髮與皮膚檢查開始。',
   heroLede: '只要 15 分鐘，我們檢查毛髮、皮膚、耳朵、指甲和情緒，再用 LINE 傳給您一頁報告卡。沒有任何預約壓力。',
-  statRating: 'Google 評分', statGrooms: '已完成美容', statSedation: '使用鎮定劑', statNote: '樣稿用範例數字。',
+  statRating: 'Google 評分', statGrooms: '已完成美容', statRebook: '毛爸媽回訪率', estBook: '預約這個服務', statNote: '樣稿用範例數字。',
   floatA1: '報告卡已傳送', floatA2: '麻糬 · 毛況：良好', floatB1: '發現毛結', floatB2: '耳後 · 溫和處理',
   checkEyebrow: '免費 · 15 分鐘 · 不必預約後續服務',
   checkTitle: '免費毛髮與皮膚檢查包含什麼',

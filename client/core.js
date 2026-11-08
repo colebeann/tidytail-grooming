@@ -84,6 +84,26 @@ function initEstimator() {
   };
   [s, z, m].forEach((el) => el.addEventListener('input', run));
   run();
+
+  // "Book this groom": carry the estimate into the booking form, then the
+  // #book link scrolls there (smoothly when the motion layer is on).
+  $('#est-book')?.addEventListener('click', () => {
+    const form = $('#lead-form');
+    if (!form || form.hidden) return;
+    const service = s.selectedOptions[0]?.dataset.service;
+    const size = z.selectedOptions[0]?.dataset.size;
+    if (service) form.elements.service.value = service;
+    if (size) form.elements.size.value = size;
+    if (service === 'cat-calm') form.elements.species.value = 'cat';
+    const matting = form.querySelector('input[name="concerns"][value="matting"]');
+    if (matting) matting.checked = m.checked;
+    ['service', 'size', 'species'].forEach((n) => {
+      const el = form.elements[n];
+      el.classList.remove('prefilled');
+      void el.offsetWidth; // restart the highlight animation
+      el.classList.add('prefilled');
+    });
+  });
 }
 
 // ---------- Before / after ----------

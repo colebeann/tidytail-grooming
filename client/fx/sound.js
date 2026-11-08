@@ -353,7 +353,9 @@ export function initSound() {
   });
 
   // Interaction feedback
-  const HOVER = '.btn, .site-nav a, .lang button, .chip, .card, .plan, summary';
+  // Hover notes only on things you click. Not on cards (services, Care Club
+  // plans) or FAQ questions: scanning across those made the page too noisy.
+  const HOVER = '.btn, .site-nav a, .lang button, .chip';
   let lastHover = 0;
   document.addEventListener('pointerover', (e) => {
     const el = e.target.closest(HOVER);
