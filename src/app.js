@@ -13,6 +13,7 @@ import { fileURLToPath } from 'node:url';
 import express from 'express';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
+import compression from 'compression';
 import { rateLimit } from 'express-rate-limit';
 import { config } from './config.js';
 import { log } from './lib/logger.js';
@@ -185,6 +186,10 @@ export function createApp({ formLimit = config.formRateLimit } = {}) {
 
   app.use('/api', (req, res) => res.status(404).json({ ok: false, error: 'Not found' }));
 
+  // Gzip static files only. API responses are never compressed: mixing secrets
+  // (CSRF tokens) with compression can leak them through a BREACH-style attack.
+  app.use(compression({ filter: (req, res) => !req.path.startsWith('/api') && compression.filter(req, res) }));
+
   // Static landing page
   app.use(
     express.static(publicDir, {
@@ -192,7 +197,11 @@ export function createApp({ formLimit = config.formRateLimit } = {}) {
       extensions: ['html'],
       index: 'index.html',
       setHeaders(res, file) {
-        res.setHeader('Cache-Control', file.endsWith('.html') ? 'no-cache' : 'public, max-age=86400');
+        // Hashed bundle chunks never change, so they can be cached forever.
+        const cache = file.includes(`${path.sep}chunks${path.sep}`)
+          ? 'public, max-age=31536000, immutable'
+          : file.endsWith('.html') || file.endsWith('app.js') ? 'no-cache' : 'public, max-age=86400';
+        res.setHeader('Cache-Control', cache);
       },
     }),
   );

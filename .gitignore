@@ -7,3 +7,4 @@ data/
 *.csv
 .DS_Store
 coverage/
+public/assets/dist/
