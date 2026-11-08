@@ -1,6 +1,6 @@
 // Traditional Chinese strings. English lives in the HTML itself.
 // Mock-up copy: have a native Taiwan reviewer check wording before real use.
-window.TT_ZH = {
+export const ZH = {
   skip: '跳到主要內容',
   demo: '展示樣稿：本頁所有名稱、價格、評論與數字皆為範例資料。',
   brandSub: '寵物美容工作室',
@@ -86,6 +86,8 @@ window.TT_ZH = {
   errRequired: '請填寫此欄位。', errContact: '請至少留下一種聯絡方式。', errEmail: '請輸入正確的電子郵件。',
   errPhone: '請輸入正確的手機號碼。', errLine: 'LINE ID 只能包含英數字與 . _ - @。', errConsent: '需要您的同意才能處理預約。',
   errDate: '請選擇今天起 120 天內的日期。', errServer: '目前無法送出，請稍後再試，或直接用 LINE 聯絡我們。', errFields: '請檢查標示的欄位。',
+  // Motion & sound
+  sound: '音效', progress: '頁面進度', popHint: '偷偷說：點點看泡泡',
   // Opt-out page
   ooTitle: '停止訊息', ooD: '輸入您留給我們的手機號碼或電子郵件，我們就不會再傳行銷訊息給您。', ooLabel: '手機或電子郵件', ooSubmit: '停止訊息', ooBack: '回首頁',
 };

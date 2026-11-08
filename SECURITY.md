@@ -21,7 +21,9 @@ security@tidytail.example (placeholder). We aim to reply within 3 working days.
 | Retention | `npm run leads:purge` deletes leads older than `LEAD_RETENTION_DAYS` (default 365) |
 | Admin | Bearer token; only its SHA-256 is on the server; timing-safe compare |
 | Errors & logs | Generic error messages, no stack traces; logs never include form contents and redact sensitive keys |
-| Supply chain | Exact-pinned dependencies, lockfile, `npm audit` in CI, Dependabot, CodeQL, secret scanning (gitleaks) |
+| Supply chain | Exact-pinned dependencies (versions ≥ 2 weeks old when added), lockfile integrity hashes, `ignore-scripts=true` (no package install scripts run), `npm audit` + `npm audit signatures` in CI, Dependabot, CodeQL, secret scanning (gitleaks) |
+| Front-end libraries | three.js, GSAP, Lenis, canvas-confetti are bundled and self-hosted (no CDNs), so CSP stays `script-src 'self'`; a test rejects `eval`, `new Function` or remote imports in the bundle; confetti runs without Web Workers |
+| Compression | Gzip for static files only; API responses are never compressed (BREACH) |
 | Runtime | Docker image runs as non-root `node` user, dev dependencies excluded |
 
 ## Operating checklist

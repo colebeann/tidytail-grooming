@@ -9,8 +9,7 @@
   <meta name="theme-color" content="#f7f1e8">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/styles.css">
-  <script src="/assets/i18n.js" defer></script>
-  <script src="/assets/main.js" defer></script>
+  <script type="module" src="/assets/dist/app.js"></script>
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
@@ -19,16 +18,32 @@
     <span data-i18n="demo">Mock-up: every name, price, review and number on this page is sample data.</span>
   </div>
 
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="bar"></span>
+    <svg class="runner" viewBox="0 0 24 24"><path d="M12 21c-3.3 0-6-1.9-6-4.3 0-2.1 2.2-4.7 6-4.7s6 2.6 6 4.7c0 2.4-2.7 4.3-6 4.3zM2.3 11.6a2.3 2.9 0 1 0 4.6 0a2.3 2.9 0 1 0 -4.6 0zM6.9 7.4a2.3 2.9 0 1 0 4.6 0a2.3 2.9 0 1 0 -4.6 0zM12.5 7.4a2.3 2.9 0 1 0 4.6 0a2.3 2.9 0 1 0 -4.6 0zM17.1 11.6a2.3 2.9 0 1 0 4.6 0a2.3 2.9 0 1 0 -4.6 0z"/></svg>
+  </div>
+
   <header class="site-header">
     <div class="wrap header-row">
       <a class="brand" href="#top" aria-label="Tidytail Grooming Studio home">
-        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
-          <circle cx="20" cy="20" r="19" class="mark-bg"/>
-          <ellipse cx="20" cy="25" rx="7" ry="6" class="mark-fg"/>
-          <ellipse cx="11.5" cy="17" rx="3" ry="3.8" class="mark-fg"/>
-          <ellipse cx="17" cy="11.5" rx="3" ry="3.8" class="mark-fg"/>
-          <ellipse cx="23" cy="11.5" rx="3" ry="3.8" class="mark-fg"/>
-          <ellipse cx="28.5" cy="17" rx="3" ry="3.8" class="mark-fg"/>
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <defs>
+            <linearGradient id="tt-iris" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" class="iris-stop-1"/><stop offset=".5" class="iris-stop-2"/><stop offset="1" class="iris-stop-3"/>
+            </linearGradient>
+          </defs>
+          <circle cx="22" cy="26" r="19" class="mark-bg"/>
+          <circle cx="22" cy="26" r="19" class="mark-ring"/>
+          <path d="M9.5 19.5a14 14 0 0 1 8-8" class="mark-shine"/>
+          <g class="mark-paw">
+            <ellipse cx="22" cy="31" rx="7" ry="5.6"/>
+            <ellipse class="toe" cx="13.6" cy="23.6" rx="2.6" ry="3.3"/>
+            <ellipse class="toe" cx="18.6" cy="18.8" rx="2.6" ry="3.3"/>
+            <ellipse class="toe" cx="25.4" cy="18.8" rx="2.6" ry="3.3"/>
+            <ellipse class="toe" cx="30.4" cy="23.6" rx="2.6" ry="3.3"/>
+          </g>
+          <circle cx="40.5" cy="8.5" r="4.5" class="mark-bub"/>
+          <circle cx="45" cy="17" r="2.2" class="mark-bub"/>
         </svg>
         <span class="brand-name">Tidytail<small data-i18n="brandSub">Grooming Studio</small></span>
       </a>
@@ -41,6 +56,9 @@
         <a href="#promises" data-i18n="navPromises">Our promises</a>
         <a href="#reviews" data-i18n="navReviews">Reviews</a>
         <a href="#faq" data-i18n="navFaq">FAQ</a>
+        <button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="false" aria-label="Sound effects">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave w1" d="M16 9.5a3.5 3.5 0 0 1 0 5"/><path class="wave w2" d="M18.5 7a7 7 0 0 1 0 10"/><path class="mute" d="M16 9l5 6M21 9l-5 6"/></svg>
+        </button>
         <div class="lang" role="group" aria-label="Language">
           <button type="button" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" data-lang="zh" aria-pressed="false">中文</button>
@@ -53,21 +71,24 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero" id="top">
+      <div class="aurora" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="heroEyebrow">Dajia, Taichung · Dogs, cats &amp; rabbits</p>
           <h1 data-i18n="heroTitle">A calm, honest groom. It starts with a free coat &amp; skin check.</h1>
+          <svg class="foam-line" viewBox="0 0 600 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 18 C 60 4, 110 28, 170 16 S 280 6, 340 18 S 450 28, 510 14 S 580 10, 596 16"/></svg>
           <p class="lede" data-i18n="heroLede">Bring your pet in for 15 minutes. We check coat, skin, ears, nails and mood, then send you a one-page report card on LINE. No pressure to book.</p>
           <div class="hero-ctas">
             <a class="btn btn-primary" href="#book" data-i18n="ctaFree">Get my free check</a>
             <a class="btn btn-ghost" href="#services" data-i18n="ctaPrices">See services &amp; prices</a>
           </div>
           <dl class="hero-stats">
-            <div><dt data-i18n="statRating">Google rating</dt><dd>4.9<span aria-hidden="true">★</span></dd></div>
-            <div><dt data-i18n="statGrooms">Grooms done</dt><dd>1,284</dd></div>
+            <div><dt data-i18n="statRating">Google rating</dt><dd data-count="4.9">4.9<span aria-hidden="true">★</span></dd></div>
+            <div><dt data-i18n="statGrooms">Grooms done</dt><dd data-count="1284">1,284</dd></div>
             <div><dt data-i18n="statSedation">Sedation used</dt><dd>0</dd></div>
           </dl>
           <p class="fineprint" data-i18n="statNote">Sample numbers for the mock-up.</p>
+          <p class="pop-hint" aria-hidden="true" data-i18n="popHint">Psst: click the bubbles</p>
         </div>
         <div class="hero-art" aria-hidden="true">
           <svg viewBox="0 0 420 380" class="illus">
@@ -107,8 +128,15 @@
       </div>
     </section>
 
+    <div class="marquee" aria-hidden="true">
+      <svg width="0" height="0" class="sr-only"><defs><path id="tt-paw" d="M12 21c-3.3 0-6-1.9-6-4.3 0-2.1 2.2-4.7 6-4.7s6 2.6 6 4.7c0 2.4-2.7 4.3-6 4.3zM2.3 11.6a2.3 2.9 0 1 0 4.6 0a2.3 2.9 0 1 0 -4.6 0zM6.9 7.4a2.3 2.9 0 1 0 4.6 0a2.3 2.9 0 1 0 -4.6 0zM12.5 7.4a2.3 2.9 0 1 0 4.6 0a2.3 2.9 0 1 0 -4.6 0zM17.1 11.6a2.3 2.9 0 1 0 4.6 0a2.3 2.9 0 1 0 -4.6 0z"/></defs></svg>
+      <div class="marquee-track"><div class="marquee-row"><span>Bath &amp; Tidy</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>洗澡修整</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>Full Groom</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>全套美容</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>Spa Day</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>SPA 日</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>Cat Calm</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>貓咪安心</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>No sedation</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>絕不鎮定</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>Real reviews</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>真實評論</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg></div><div class="marquee-row"><span>Bath &amp; Tidy</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>洗澡修整</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>Full Groom</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>全套美容</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>Spa Day</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>SPA 日</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>Cat Calm</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>貓咪安心</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>No sedation</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>絕不鎮定</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>Real reviews</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg><span>真實評論</span><svg viewBox="0 0 24 24"><use href="#tt-paw"/></svg></div></div>
+    </div>
+
     <!-- FREE CHECK -->
     <section class="section check" aria-labelledby="check-title">
+      <div class="suds suds-top" aria-hidden="true"></div>
+      <div class="suds suds-bottom" aria-hidden="true"></div>
       <div class="wrap check-grid">
         <div>
           <p class="eyebrow" data-i18n="checkEyebrow">Free · 15 minutes · No obligation</p>
@@ -117,6 +145,7 @@
           <a class="btn btn-primary" href="#book" data-i18n="ctaFree">Get my free check</a>
         </div>
         <div class="report" role="img" aria-label="Sample report card">
+          <span class="scan" aria-hidden="true"></span>
           <div class="report-head">
             <span class="report-pet" data-i18n="repPet">Report card · Mochi (Shiba, 4 yrs)</span>
             <span class="tag" data-i18n="sample">Sample</span>
@@ -139,6 +168,8 @@
       <div class="wrap">
         <p class="eyebrow center" data-i18n="howEyebrow">How it works</p>
         <h2 id="how-title" class="center" data-i18n="howTitle">Three steps, no surprises</h2>
+        <div class="steps-wrap">
+        <svg class="steps-path" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M60 60 C 200 -10, 300 130, 500 60 S 800 -10, 940 60"/></svg>
         <ol class="steps">
           <li>
             <span class="step-n">1</span>
@@ -156,6 +187,7 @@
             <p data-i18n="step3D">Before and after photos, notes for home care, and a suggested date for the next visit. Join the Care Club only if you want to.</p>
           </li>
         </ol>
+        </div>
       </div>
     </section>
 
@@ -567,6 +599,7 @@
   </main>
 
   <footer class="site-footer">
+    <div class="wordmark" aria-hidden="true">Tidytail</div>
     <div class="wrap footer-grid">
       <div>
         <strong>Tidytail Grooming Studio</strong>

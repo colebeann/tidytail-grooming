@@ -158,3 +158,25 @@ test('form endpoint is rate limited', async () => {
   for (let i = 0; i < 3; i++) codes.push((await request(limited).post('/api/opt-out').send({ contact: 'a@b.co' })).status);
   assert.equal(codes[2], 429);
 });
+
+test('static assets are gzipped but API responses are not (BREACH)', async () => {
+  const css = await request(app).get('/assets/styles.css').set('Accept-Encoding', 'gzip');
+  assert.equal(css.headers['content-encoding'], 'gzip');
+  const api = await request(app).get('/api/csrf').set('Accept-Encoding', 'gzip');
+  assert.equal(api.headers['content-encoding'], undefined);
+});
+
+test('client bundle is CSP-safe (no eval, no inline workers, no remote URLs loaded)', async (t) => {
+  const dir = new URL('../public/assets/dist/', import.meta.url);
+  let files;
+  try {
+    files = await fs.readdir(dir, { recursive: true });
+  } catch {
+    return t.skip('bundle not built (run npm run build)');
+  }
+  for (const f of files.filter((n) => n.endsWith('.js'))) {
+    const code = await fs.readFile(new URL(f, dir), 'utf8');
+    assert.doesNotMatch(code, /\beval\(|new Function\(/, f + ' uses eval');
+    assert.doesNotMatch(code, /import\(\s*["']https?:/, f + ' imports remote code');
+  }
+});
