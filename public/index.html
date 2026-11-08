@@ -56,9 +56,13 @@
         <a href="#promises" data-i18n="navPromises">Our promises</a>
         <a href="#reviews" data-i18n="navReviews">Reviews</a>
         <a href="#faq" data-i18n="navFaq">FAQ</a>
-        <button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="false" aria-label="Sound effects">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave w1" d="M16 9.5a3.5 3.5 0 0 1 0 5"/><path class="wave w2" d="M18.5 7a7 7 0 0 1 0 10"/><path class="mute" d="M16 9l5 6M21 9l-5 6"/></svg>
-        </button>
+        <span class="sound-wrap">
+          <button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="false" aria-label="Turn on bath-time sounds" title="Turn on bath-time sounds">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave w1" d="M16 9.5a3.5 3.5 0 0 1 0 5"/><path class="wave w2" d="M18.5 7a7 7 0 0 1 0 10"/><path class="mute" d="M16 9l5 6M21 9l-5 6"/></svg>
+            <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+          </button>
+          <span class="sound-hint" id="sound-hint" role="status" hidden><span data-i18n="soundHint">Try bath-time sounds 🫧</span></span>
+        </span>
         <div class="lang" role="group" aria-label="Language">
           <button type="button" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" data-lang="zh" aria-pressed="false">中文</button>

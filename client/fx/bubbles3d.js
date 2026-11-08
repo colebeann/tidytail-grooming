@@ -68,7 +68,8 @@ export function initBubbles(hero) {
   hero.prepend(canvas);
 
   const renderer = new WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+  // 1.5x is visually identical for soft bubbles and frees GPU time for the cursor.
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
   const scene = new Scene();
   const camera = new PerspectiveCamera(40, 1, 0.1, 100);
   camera.position.z = 14;
@@ -84,7 +85,8 @@ export function initBubbles(hero) {
   };
   const material = new ShaderMaterial({ vertexShader: vertex, fragmentShader: fragment, uniforms, transparent: true, depthWrite: false });
 
-  const geo = new IcosahedronGeometry(1, 5);
+  // Detail 3 (1,280 faces) looks as round as 5 (20,480) once the shader shades it.
+  const geo = new IcosahedronGeometry(1, 3);
   const seeds = new Float32Array(COUNT).map(() => Math.random());
   geo.setAttribute('aSeed', new InstancedBufferAttribute(seeds, 1));
   const mesh = new InstancedMesh(geo, material, COUNT);

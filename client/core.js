@@ -17,7 +17,7 @@ const EN = {
   errPhone: 'Please enter a valid mobile number.', errLine: 'LINE ID can only use letters, numbers and . _ - @',
   errConsent: 'We need your consent to handle the request.', errDate: 'Please pick a date within the next 120 days.',
   errServer: "We couldn't send this right now. Please try again, or message us on LINE.", errFields: 'Please check the highlighted fields.',
-  sending: 'Sending…', submit: 'Send request', sound: 'Sound',
+  sending: 'Sending…', submit: 'Send request', sound: 'Sound', soundOn: 'Turn on bath-time sounds', soundOff: 'Turn sound off',
 };
 export let lang = 'en';
 
