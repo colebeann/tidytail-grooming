@@ -198,9 +198,12 @@ export function createApp({ formLimit = config.formRateLimit } = {}) {
       index: 'index.html',
       setHeaders(res, file) {
         // Hashed bundle chunks never change, so they can be cached forever.
+        // Everything else (HTML, CSS, entry script, icons) must be revalidated on
+        // every load: a stale stylesheet paired with new HTML breaks the layout.
+        // Revalidation is cheap thanks to ETags (304 Not Modified).
         const cache = file.includes(`${path.sep}chunks${path.sep}`)
           ? 'public, max-age=31536000, immutable'
-          : file.endsWith('.html') || file.endsWith('app.js') ? 'no-cache' : 'public, max-age=86400';
+          : 'no-cache';
         res.setHeader('Cache-Control', cache);
       },
     }),

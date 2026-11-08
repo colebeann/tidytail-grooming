@@ -180,3 +180,10 @@ test('client bundle is CSP-safe (no eval, no inline workers, no remote URLs load
     assert.doesNotMatch(code, /import\(\s*["']https?:/, f + ' imports remote code');
   }
 });
+
+test('stylesheet and entry files are revalidated; only hashed chunks are cached long-term', async () => {
+  for (const f of ['/', '/assets/styles.css', '/assets/favicon.svg', '/assets/opt-out.js']) {
+    const res = await request(app).get(f);
+    assert.equal(res.headers['cache-control'], 'no-cache', f);
+  }
+});
