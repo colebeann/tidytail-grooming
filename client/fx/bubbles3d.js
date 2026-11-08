@@ -62,6 +62,9 @@ export function initBubbles(hero) {
   const canvas = document.createElement('canvas');
   canvas.className = 'bubbles-canvas';
   canvas.setAttribute('aria-hidden', 'true');
+  // Position the canvas here as well as in CSS, so it can never take part in
+  // layout (and grow the hero) even if the stylesheet is missing or stale.
+  Object.assign(canvas.style, { position: 'absolute', inset: '0', width: '100%', height: '100%', pointerEvents: 'none' });
   hero.prepend(canvas);
 
   const renderer = new WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
@@ -97,6 +100,8 @@ export function initBubbles(hero) {
   let W = 10, H = 6;
   const view = () => {
     const w = hero.clientWidth, h = hero.clientHeight;
+    // Safety valve: a hero this tall means the layout is broken; don't render into it.
+    if (!w || !h || h > 4000) return;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
