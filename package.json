@@ -10,14 +10,15 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node scripts/build.js && node --watch src/server.js",
+    "dev": "node scripts/ensure-deps.js && node scripts/build.js && node --watch src/server.js",
     "build": "node scripts/build.js",
     "build:watch": "node scripts/build.js --watch",
     "test": "node --test test/*.test.js",
     "audit": "npm audit --audit-level=high",
     "keys": "node scripts/generate-secrets.js",
     "leads:export": "node scripts/export-leads.js",
-    "leads:purge": "node scripts/purge-leads.js"
+    "leads:purge": "node scripts/purge-leads.js",
+    "setup": "node scripts/ensure-deps.js"
   },
   "license": "UNLICENSED",
   "dependencies": {

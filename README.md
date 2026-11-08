@@ -14,11 +14,14 @@ Its structure follows the agency business plan and leads tracker:
 ## Run it
 
 ```bash
-npm ci
-npm run dev        # builds the client bundle, then serves http://localhost:3000
+npm run dev        # installs deps if needed, builds the client bundle, serves http://localhost:3000
 npm test
 npm run build:watch   # optional: rebuild the bundle on every change in client/
 ```
+
+You don't need to run `npm ci` yourself. `npm run dev` runs it only on a fresh clone or when
+`package-lock.json` changed (for example after a `git pull` that updated dependencies);
+otherwise it skips straight to starting. `npm run setup` does just that check.
 
 Production:
 
